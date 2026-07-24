@@ -43,6 +43,7 @@ export async function POST(req: Request) {
     `Answer questions using ONLY the knowledge base below. Be concise, warm, and concrete.`,
     `If the answer isn't in the knowledge base, say you're not sure and suggest contacting ${brand.social.email}. Never invent facts, prices, or features.`,
     `Reply in plain text (short paragraphs or bullet points). Do not mention "the knowledge base".`,
+    `Never use em dashes or en dashes. Use a period, comma, or colon instead.`,
     ``,
     `=== KNOWLEDGE BASE ===`,
     knowledge,
