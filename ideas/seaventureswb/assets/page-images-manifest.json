@@ -1,0 +1,50 @@
+{
+  "fleet": [
+    "/ingested/seaventureswb/fleet-01.webp",
+    "/ingested/seaventureswb/fleet-02.webp",
+    "/ingested/seaventureswb/fleet-03.webp",
+    "/ingested/seaventureswb/fleet-04.webp",
+    "/ingested/seaventureswb/fleet-05.webp",
+    "/ingested/seaventureswb/fleet-06.webp"
+  ],
+  "gallery": [
+    "/ingested/seaventureswb/gallery-01.webp",
+    "/ingested/seaventureswb/gallery-02.webp",
+    "/ingested/seaventureswb/gallery-03.webp",
+    "/ingested/seaventureswb/gallery-04.webp",
+    "/ingested/seaventureswb/gallery-05.webp",
+    "/ingested/seaventureswb/gallery-06.webp",
+    "/ingested/seaventureswb/gallery-07.webp",
+    "/ingested/seaventureswb/gallery-08.webp",
+    "/ingested/seaventureswb/gallery-09.webp",
+    "/ingested/seaventureswb/gallery-10.webp",
+    "/ingested/seaventureswb/gallery-11.webp",
+    "/ingested/seaventureswb/gallery-12.webp",
+    "/ingested/seaventureswb/gallery-13.webp",
+    "/ingested/seaventureswb/gallery-14.webp",
+    "/ingested/seaventureswb/gallery-15.webp",
+    "/ingested/seaventureswb/gallery-16.webp",
+    "/ingested/seaventureswb/gallery-17.webp",
+    "/ingested/seaventureswb/gallery-18.webp",
+    "/ingested/seaventureswb/gallery-19.webp",
+    "/ingested/seaventureswb/gallery-20.webp",
+    "/ingested/seaventureswb/gallery-21.webp",
+    "/ingested/seaventureswb/gallery-22.webp",
+    "/ingested/seaventureswb/gallery-23.webp",
+    "/ingested/seaventureswb/gallery-24.webp",
+    "/ingested/seaventureswb/gallery-25.webp",
+    "/ingested/seaventureswb/gallery-26.webp"
+  ],
+  "services": [
+    "/ingested/seaventureswb/services-01.webp",
+    "/ingested/seaventureswb/services-02.webp",
+    "/ingested/seaventureswb/services-03.webp",
+    "/ingested/seaventureswb/services-04.webp",
+    "/ingested/seaventureswb/services-05.webp"
+  ],
+  "inquiry": [
+    "/ingested/seaventureswb/inquiry-01.webp",
+    "/ingested/seaventureswb/inquiry-02.webp",
+    "/ingested/seaventureswb/inquiry-03.webp"
+  ]
+}
