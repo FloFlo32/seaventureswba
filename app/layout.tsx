@@ -11,7 +11,7 @@ const siteUrl = `https://${brand.domain}`;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${brand.name} — ${brand.tagline}`,
+    default: `${brand.name} · ${brand.tagline}`,
     template: `%s · ${brand.name}`,
   },
   description: brand.description,
@@ -27,7 +27,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: brand.name,
     description: brand.description,
-    creator: `@${brand.social.x}`,
   },
 };
 

@@ -1,9 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Class-based dark mode so we can ship a theme toggle (not OS-locked). */
-@custom-variant dark (&:is(.dark *));
-
 /*
  * ────────────────────────────────────────────────────────────────────────────
  *  DESIGN TOKENS  —  the system that stops this site looking AI-generated.
@@ -15,8 +12,19 @@
 
 :root {
   /* brand:hue:start */
-  --brand-hue: 265; /* set by brand.config.ts */
+  --brand-hue: 240; /* set by brand.config.ts */
 /* brand:hue:end */
+
+  /* Secondary accent hue, sampled from the real SeaVentures wheel-logo gold
+     (ideas/seaventureswb/assets/logo-original.png). Used sparingly to punctuate
+     against the navy primary: badges, dividers, ratings, hover accents. */
+  --gold-hue: 75;
+  --gold: oklch(0.74 0.115 var(--gold-hue));
+  --gold-foreground: oklch(0.22 0.03 var(--gold-hue));
+
+  /* True deep navy (matches the logo wordmark) for the footer + high-contrast panels. */
+  --navy-deep: oklch(0.22 0.045 var(--brand-hue));
+  --navy-deep-foreground: oklch(0.96 0.01 var(--brand-hue));
 
   /* radius — brand:corners controls this via `npm run brand` */
   --radius: 0.75rem;
@@ -56,40 +64,6 @@
   --aurora-3: oklch(0.75 0.16 calc(var(--brand-hue) - 50));
 }
 
-.dark {
-  /* Near-black mono base: surfaces stay neutral; violet is reserved as the accent. */
-  --background: oklch(0.15 0.004 var(--brand-hue));
-  --foreground: oklch(0.97 0.006 var(--brand-hue));
-
-  --card: oklch(0.185 0.005 var(--brand-hue));
-  --card-foreground: oklch(0.97 0.006 var(--brand-hue));
-  --popover: oklch(0.185 0.005 var(--brand-hue));
-  --popover-foreground: oklch(0.97 0.006 var(--brand-hue));
-
-  --primary: oklch(0.7 0.19 var(--brand-hue));
-  --primary-foreground: oklch(0.15 0.02 var(--brand-hue));
-
-  --secondary: oklch(0.24 0.006 var(--brand-hue));
-  --secondary-foreground: oklch(0.97 0.006 var(--brand-hue));
-
-  --muted: oklch(0.23 0.006 var(--brand-hue));
-  --muted-foreground: oklch(0.72 0.012 var(--brand-hue));
-
-  --accent: oklch(0.27 0.012 var(--brand-hue));
-  --accent-foreground: oklch(0.97 0.006 var(--brand-hue));
-
-  --destructive: oklch(0.65 0.2 25);
-  --destructive-foreground: oklch(0.97 0.01 25);
-
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.7 0.19 var(--brand-hue));
-
-  --aurora-1: oklch(0.65 0.22 var(--brand-hue));
-  --aurora-2: oklch(0.68 0.2 calc(var(--brand-hue) + 60));
-  --aurora-3: oklch(0.7 0.18 calc(var(--brand-hue) - 50));
-}
-
 /* Map tokens → Tailwind theme so you can use bg-primary, text-muted-foreground… */
 @theme inline {
   --color-background: var(--background);
@@ -114,6 +88,10 @@
   --color-aurora-1: var(--aurora-1);
   --color-aurora-2: var(--aurora-2);
   --color-aurora-3: var(--aurora-3);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-deep-foreground: var(--navy-deep-foreground);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

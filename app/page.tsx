@@ -1,10 +1,12 @@
 import { Navbar } from "@/components/sections/navbar";
 import { Hero } from "@/components/sections/hero";
-import { LogoCloud } from "@/components/sections/logo-cloud";
-import { Bento } from "@/components/sections/bento";
-import { Features } from "@/components/sections/features";
-import { Proof } from "@/components/sections/stats";
+import { Highlights } from "@/components/sections/highlights";
+import { AboutStats } from "@/components/sections/about-stats";
+import { Captains } from "@/components/sections/captains";
+import { BoatLocal } from "@/components/sections/boat-local";
+import { Destinations } from "@/components/sections/destinations";
 import { CTA } from "@/components/sections/cta";
+import { Map } from "@/components/sections/map";
 import { Footer } from "@/components/sections/footer";
 
 export default function Home() {
@@ -13,11 +15,13 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <LogoCloud />
-        <Features />
-        <Bento />
-        <Proof />
+        <Highlights />
+        <AboutStats />
+        <Captains />
+        <BoatLocal />
+        <Destinations />
         <CTA />
+        <Map />
       </main>
       <Footer />
     </>

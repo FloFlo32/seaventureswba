@@ -15,14 +15,14 @@
  */
 import { execSync } from "node:child_process";
 import { existsSync, accessSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DRY = process.argv.includes("--dry");
 
 if (existsSync(join(root, ".env"))) process.loadEnvFile(join(root, ".env"));
-const { brand } = await import(join(root, "brand.config.ts"));
+const { brand } = await import(pathToFileURL(join(root, "brand.config.ts")).href);
 
 const c = {
   dim: (s) => `\x1b[2m${s}\x1b[0m`,
@@ -152,8 +152,16 @@ if (!proj.ok) {
 } else {
   console.log(`    ${c.dim("Vercel project exists — reusing")}`);
 }
-// Trigger a production deploy from the connected repo via the CLI (handles upload).
+// Link this directory to the exact project we just resolved above. Without this,
+// `vercel deploy` falls back to naming/matching by the LOCAL FOLDER NAME, which
+// silently deploys to (or creates) a different project when the folder name
+// doesn't match `repo` — leaving the real project empty and the domain attached
+// to the wrong place.
 const team = process.env.VERCEL_TEAM ? ` --scope ${process.env.VERCEL_TEAM}` : "";
+sh(`npx --yes vercel@latest link --yes --project ${repo} --token ${process.env.VERCEL_TOKEN}${team}`, {
+  stdio: DRY ? "pipe" : "inherit",
+});
+// Trigger a production deploy from the connected repo via the CLI (handles upload).
 sh(`npx --yes vercel@latest deploy --prod --yes --token ${process.env.VERCEL_TOKEN}${team}`, {
   stdio: DRY ? "pipe" : "inherit",
 });
